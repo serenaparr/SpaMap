@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<!-- Leaflet Guide: http://leafletjs.com/examples/quick-start.html -->
+
+<html lang="en">
+<head>
+	<style type="text/css">
+	body { 
+		margin:0; 
+		padding: 0;
+		height: 100%;}
+ html { 
+		position:absolute; 
+		top:0; 
+		bottom:0;
+		width: 100%; 
+	}
+#map, #map2 { 
+		height:100%;}
+
+	/*{ 
+		height: 400px;
+		width: 600px;
+	}*/
+	</style>
+	<title>NYC SPAS UNDER $40</title>
+	<!-- Leaflet -->
+	<link rel="stylesheet" href="http://cdn.leafletjs.com/leaflet/v0.7.7/leaflet.css" />
+	<script src="http://cdn.leafletjs.com/leaflet/v0.7.7/leaflet.js"></script>
+		<script type="text/javascript" src="http://maps.stamen.com/js/tile.stamen.js?v1.3.0"></script>
+</head>
+<body>
+	<div id="map"></div>
+	<div id="map2"></div>
+	<script>
+
+//STAMEN
+var layer = new L.tileLayer('http://tile.stamen.com/watercolor/{z}/{x}/{y}.jpg', {
+	atribution: 'Map tiles by <a href="http://stamen.com">Stamen Design</a>, under <a href="http://creativecommons.org/licenses/by/3.0">CC BY 3.0</a>. Data by <a href="http://openstreetmap.org">OpenStreetMap</a>, under <a href="http://creativecommons.org/licenses/by-sa/3.0">CC BY SA</a>.'});
+
+var map = new L.Map('map', {
+    center: new L.LatLng(40.729510, -73.993843),
+    zoom: 11
+});
+
+map.addLayer(layer);
+
+L.marker([40.787436, -73.836903]).addTo(map)
+    .bindPopup('SPA CASTLE $35 WEEKDAYS<br>131-10 11th Ave, College Point')
+    // .openPopup();
+
+L.marker([40.728186, -73.983587]).addTo(map)
+    .bindPopup('RUSSIAN TURKSIH BATHS $30<br>268 E 10th St, NYC')
+    // .openPopup();
+
+L.marker([40.574809, -74.003298]).addTo(map)
+    .bindPopup('MERMAID SPA $30<br>3703 Mermaid Ave, Brooklyn, NYC')
+    // .openPopup();
+
+L.marker([40.709101, -74.005836]).addTo(map)
+    .bindPopup('WALL STREET BATH HOUSE $40<br>88 Fulton St, NYC')
+    // .openPopup();
+
+L.marker([40.594123, -73.957917]).addTo(map)
+    .bindPopup('RUSSIAN BATHS $30<br>1200 Gravesend Neck Rd, Brooklyn')
+    // .openPopup();
+
+L.marker([40.625151, -73.976349]).addTo(map)
+    .bindPopup('SANDOONY $30<br>1158 McDonald Ave, Brooklyn')
+    // .openPopup();
+
+L.marker([40.748382, -73.987603]).addTo(map)
+    .bindPopup('STADIUM SPA $30<br>49 W 32nd St, NYC')
+    // .openPopup();
+
+var popup = L.popup()
+    .setLatLng([40.807627, -74.081791])
+    .setContent("This map displays NYC spas under $40.")
+    .openOn(map);
+
+	</script>
+<!-- spa castle
+wall street bath house
+mermaid spa
+ditmas bath
+russian/turkish
+king spa in nj -->
+
+</body>
+</html>
